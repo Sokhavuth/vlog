@@ -1,8 +1,11 @@
 #index.py
+from routes import login
 from routes.frontend import index
+from routes import static
 from models import setDBconnection
 
 app = index.app
+app.mount('/login', login.app)
 
 import socket    
 host = socket.getfqdn()    
