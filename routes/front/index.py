@@ -1,8 +1,8 @@
 #routes/frontend/index.py
 import config
-from bottle import Bottle
+from .. import static
  
-app = Bottle()
+app = static.app
  
 @app.route('/')
 def index():

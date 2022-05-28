@@ -1,8 +1,6 @@
 #index.py
 from routes import login
-from routes.frontend import index
-from routes import static
-from models import setDBconnection
+from routes.front import index
 
 app = index.app
 app.mount('/login', login.app)
