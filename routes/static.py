@@ -10,6 +10,14 @@ def loadImage(filename):
 @app.route('/static/styles/<filename>')
 def loadStyle(filename):
     return static_file(filename, root='./public/styles')
+
+@app.route('/static/styles/admin/<filename>')
+def loadStyleAdmin(filename):
+    return static_file(filename, root='./public/styles/admin')
+
+@app.route('/static/styles/front/<filename>')
+def loadStyleFront(filename):
+    return static_file(filename, root='./public/styles/front')
  
 @app.route('/static/scripts/<filename>')
 def loadScript(filename):

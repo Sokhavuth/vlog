@@ -6,7 +6,7 @@ app = Bottle()
 
 @app.route('/')
 def getForm():
-    if not checkLogged.call():
+    if checkLogged.call():
         redirect('/admin/post')
     else:
         from controllers.login import get
@@ -16,3 +16,12 @@ def getForm():
 def checkUser():
     from controllers.login import checkUser
     return checkUser.call()
+
+@app.route('/logout')
+def logOut():
+    if checkLogged.call():
+        from controllers.login import logout
+        return logout.call()
+    else:
+        from controllers.login import get
+        return get.call()

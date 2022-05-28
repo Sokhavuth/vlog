@@ -1,9 +1,11 @@
 #index.py
 from routes import login
 from routes.front import index
+from routes.admin import index as admin
 
 app = index.app
-app.mount('/login', login.app)
+app.mount('/login',login.app)
+app.mount('/admin',admin.app)
 
 import socket    
 host = socket.getfqdn()    

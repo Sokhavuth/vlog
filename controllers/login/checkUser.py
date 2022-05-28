@@ -21,10 +21,10 @@ def call():
             response.set_cookie('userRole', user['role'], path='/', secret=kdict['SECRET_KEY'])
             return redirect('/admin/post')
         else:
-            kdict['message'] = 'ពាក្យ​សំងាត់របស់អ្នក​​មិន​ត្រឹមត្រូវ​ទេ!'
+            kdict['message'] = 'ពាក្យ​សំងាត់មិន​ត្រឹមត្រូវ​ទេ!'
             kdict['route'] = '/login'
             return template('base', data=kdict)
     else:
-        kdict['message'] = 'Email របស់​អ្នក​មិន​ត្រឹមត្រូវ​ទេ!'
+        kdict['message'] = 'Email មិន​ត្រឹមត្រូវ​ទេ!'
         kdict['route'] = '/login'
         return template('base', data=kdict)
