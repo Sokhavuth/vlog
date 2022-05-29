@@ -1,6 +1,7 @@
 /* public/styles/admin/index.css */
 .Index .header-wrapper {
     background: var(--background-dark);
+    margin-bottom: 20px;
 }
 
 .Index .header-wrapper header{
@@ -32,4 +33,32 @@
 .Index .header-wrapper header .logout a{
     color: white;
     font-size: 16px;
+}
+
+.Index .main{
+    display: grid;
+    grid-template-columns: 25% auto;
+}
+
+.Index .main .sidebar{
+    background: #1267b3;
+    margin-right: 10px;
+}
+
+.Index .main .sidebar .menu{
+    display: grid;
+    grid-template-columns: 25% auto;
+    align-items: center;
+    padding: 20px;
+    grid-gap: 15px 10px;
+    height: 400px;
+}
+
+.Index .main .sidebar .menu img{
+    width: 100%;
+    float: left;
+}
+
+.Index .main .sidebar .menu a{
+    font: 18px/1.5 Oswald,Koulen;
 }

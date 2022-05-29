@@ -3,5 +3,8 @@ import config
 from bottle import request
 
 def call():
-    user = request.get_cookie('userID', secret=config.kdict['SECRET_KEY'])
-    return user
+    userID = request.get_cookie('userID', secret=config.kdict['SECRET_KEY'])
+    userRole = request.get_cookie('userRole', secret=config.kdict['SECRET_KEY'])
+
+    if(userID and userRole):
+        return userID

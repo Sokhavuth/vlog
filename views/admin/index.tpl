@@ -20,4 +20,26 @@
         <div class='logout'><a href='/'>ទំព័រ​មុខ</a> | <a href='/login/logout'>ចេញ​ក្រៅ</a></div>
     </header>
     </div>
+
+    <div class="main region">
+        <div class="sidebar">
+            <div class="menu">
+                <a href="/admin/post"><img src="/static/images/movie.png" /></a>
+                <a href="/admin/post">ការផ្សាយ</a>  
+
+                <a href="/admin/category"><img src="/static/images/category.png" /></a>
+                <a href="/admin/category">ជំពូក</a>
+
+                <a href="/admin/upload"><img src="/static/images/upload.png" /></a>
+                <a href="/admin/upload">Upload</a>
+
+                <a href="/admin/user"><img src="/static/images/users.png" /></a>
+                <a href="/admin/user">អ្នក​ប្រើប្រាស់</a>
+
+                <a href="/admin/setting"><img src="/static/images/setting.png" /></a>
+                <a href="/admin/setting">Setting</a>
+            </div>
+        </div>
+        <div class="content"></div>
+    </div>
 </section>
