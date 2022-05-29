@@ -41,7 +41,7 @@
 }
 
 .Index .main .sidebar{
-    background: #1267b3;
+    background: var(--background-darker);
     margin-right: 10px;
 }
 

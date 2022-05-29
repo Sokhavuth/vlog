@@ -40,6 +40,14 @@
                 <a href="/admin/setting">Setting</a>
             </div>
         </div>
-        <div class="content"></div>
+        <div class="content">
+            <%
+            if '/post' in data['route']:
+                include('admin/post.tpl')
+            elif '/category' in data['route']:
+                include('admin/category.tpl')
+            end
+            %>
+        </div>
     </div>
 </section>

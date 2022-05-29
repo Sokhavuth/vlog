@@ -12,10 +12,12 @@
   </head>
   <body>
   <%
-    if(data['route'] == '/login'):
+    if('/login' in data['route']):
         include('login.tpl')
     elif('/admin/' in data['route']):
         include('admin/index.tpl')
+    elif('/' in data['route']):
+        include('front/index.tpl')
     end
   %>
   </body>

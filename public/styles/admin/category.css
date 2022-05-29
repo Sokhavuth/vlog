@@ -1,0 +1,17 @@
+/* public/styles/admin/category.css */
+.Index .main .content{
+    background: var(--background-darker);
+    padding: 20px;
+}
+
+.Index .main .content form{
+    display: grid;
+    grid-template-columns: 100%;
+    width: 50%;
+    grid-gap: 5px;
+}
+
+.Index .main .content form input{
+    font: var(--body-font);
+    padding: 2px 10px;
+}

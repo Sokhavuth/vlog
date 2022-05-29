@@ -1,13 +1,9 @@
 #routes/admin/index.py
-from bottle import Bottle,redirect
-from controllers.login import checkLogged
+from bottle import Bottle
+from . import post
+from . import category
 
 app = Bottle()
 
-@app.route('/post')
-def index():
-    if checkLogged.call():
-        from controllers.admin.posts import read
-        return read.call()
-    else:
-        redirect('/login')
+app.mount('/post',post.app)
+app.mount('/category',category.app)

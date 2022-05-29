@@ -6,4 +6,5 @@ app = static.app
  
 @app.route('/')
 def index():
-    return config.kdict['siteTitle']
+    from controllers.front import index
+    return index.call()
