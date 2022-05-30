@@ -50,4 +50,41 @@
             %>
         </div>
     </div>
+
+    <div class="Listing region">
+        %if 'items' in data:
+        <ul class="list">
+            %for item in data['items']:
+            <li class="item">
+                <a class="thumb" href="/{{data['type']}}/{{item['id']}}">
+                    <img src="{{item['thumb']}}" />
+                </a>
+                <div>
+                    <a class="title" href="/{{data['type']}}/{{item['id']}}">
+                        {{item['title']}}
+                    </a>
+                    <span id="{{item['id']}}">
+                        <script>
+                            var date = (new Date('{{item["date"]}}')).toLocaleDateString()
+                            $('.Listing .list .item #{{item["id"]}}').append(date)
+                        </script>
+                    </span>
+                </div>
+                <div class="edit">
+                    <a href="/admin/{{data['type']}}/edit/{{item['id']}}">
+                        <img src="/static/images/edit.png" />
+                    </a>
+                    <a href="/admin/{{data['type']}}/delete/{{item['id']}}">
+                        <img src="/static/images/delete.png" />
+                    </a>
+                </div>
+            </li>
+            %end
+        </ul>
+        %end
+        <div class="paginate region">
+            <img onclick="paginate(`{{data['route']}}`)" src="/static/images/load-more.png"/>
+        </div>
+    </div>
+
 </section>

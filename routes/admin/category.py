@@ -1,4 +1,4 @@
-#routes/admin/index.py
+#routes/admin/category.py
 from bottle import Bottle,redirect
 from controllers.login import checkLogged
 
@@ -9,5 +9,13 @@ def getCategory():
     if checkLogged.call():
         from controllers.admin.categories import read
         return read.call()
+    else:
+        redirect('/login')
+
+@app.route('/',method='post')
+def postCategory():
+    if checkLogged.call():
+        from controllers.admin.categories import create
+        return create.call()
     else:
         redirect('/login')

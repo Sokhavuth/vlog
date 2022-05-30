@@ -62,3 +62,67 @@
 .Index .main .sidebar .menu a{
     font: 18px/1.5 Oswald,Koulen;
 }
+
+.Index .Listing .list{
+    display: grid;
+    grid-template-columns: calc(50% - 5px) calc(50% - 5px);
+    grid-gap: 10px;
+    padding-top: 10px;
+}
+
+.Index .Listing .info{
+    background: var(--background-darker);
+    text-align: center;
+    margin: 10px auto;
+    padding: 5px;
+}
+
+.Index .Listing .list .item{
+    display: grid;
+    grid-template-columns: 22% 56% auto;
+    background: var(--background-darker);
+    grid-gap: 10px;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.Index .Listing .item .thumb{
+    position: relative;
+    padding-top: 56.25%;
+}
+
+.Index .Listing .item .title{
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.Index .Listing .list .item .thumb img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+
+.Index .Listing .list .item .edit{
+    text-align: right;
+}
+
+.Index .Listing .list .item .edit img{
+    width: 40px;
+    visibility: hidden;
+}
+
+.Index .Listing .list .item:hover .edit img{
+    visibility: visible;
+}
+
+.Index .paginate{
+    text-align: center;
+    padding: 5px 0 0;
+    margin: 10px auto;
+    background: var(--background-darker);
+}
