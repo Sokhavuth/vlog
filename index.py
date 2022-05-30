@@ -2,6 +2,7 @@
 from routes import login
 from routes.front import index
 from routes.admin import index as admin
+from models import setDBconnection
 
 app = index.app
 app.mount('/login',login.app)

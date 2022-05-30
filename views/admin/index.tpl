@@ -65,7 +65,7 @@
                     </a>
                     <span id="{{item['id']}}">
                         <script>
-                            var date = (new Date('{{item["date"]}}')).toLocaleDateString()
+                            var date = (new Date('{{item["date"]}}')).toLocaleDateString('it-IT')
                             $('.Listing .list .item #{{item["id"]}}').append(date)
                         </script>
                     </span>

@@ -5,7 +5,7 @@ from controllers.login import checkLogged
 app = Bottle()
 
 @app.route('/')
-def getCategory():
+def readCategory():
     if checkLogged.call():
         from controllers.admin.categories import read
         return read.call()
@@ -13,9 +13,17 @@ def getCategory():
         redirect('/login')
 
 @app.route('/',method='post')
-def postCategory():
+def createCategory():
     if checkLogged.call():
         from controllers.admin.categories import create
         return create.call()
+    else:
+        redirect('/login')
+
+@app.route('/edit/<id>')
+def editCategory(id):
+    if checkLogged.call():
+        from controllers.admin.categories import update
+        return update.call(id)
     else:
         redirect('/login')
