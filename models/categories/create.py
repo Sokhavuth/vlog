@@ -1,16 +1,26 @@
 #models/categories/create.py
-import uuid
-from models import setDBconnection
+import uuid,config
 from bottle import request
 
 def call():
-    id = uuid.uuid4().hex
+    if(request.forms.getunicode('id')):
+        id = request.forms.getunicode('id')
+    else:
+        id = uuid.uuid4().hex
     category = {
         'id': id,
         'title': request.forms.getunicode('title'),
         'thumb': request.forms.getunicode('thumb'),
-        'date': request.forms.getunicode('datetime')
+        'date': request.forms.getunicode('datetime'),
+        'timestamp': config.firestore.SERVER_TIMESTAMP
     }
 
-    doc_ref = setDBconnection.db.collection('categories').document(id)
-    doc_ref.set(category)
+    category_ref = config.mydb.collection('categories').document(id)
+    counter_ref = config.mydb.collection('counters').document('category')
+
+    if(request.forms.getunicode('id')):
+        category_ref.update(category)
+    else:
+        category_ref.set(category)
+        counter_ref.update({'total': config.firestore.Increment(1)})
+        

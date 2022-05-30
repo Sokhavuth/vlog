@@ -10,6 +10,8 @@ def call():
     kdict['route'] = '/admin/category'
     kdict['type'] = 'category'
 
-    kdict['items'] = read.call(kdict['maxPosts'])
+    result = read.call(kdict['maxPosts'])
+    kdict['items'] = result['categories']
+    kdict['counter'] = result['counter']
 
     return template('base',data=kdict)

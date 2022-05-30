@@ -52,6 +52,7 @@
     </div>
 
     <div class="Listing region">
+        <div class="info">សរុប​ទាំងអស់​មាន​ចំនួនៈ {{data['counter']['total']}}</div>
         %if 'items' in data:
         <ul class="list">
             %for item in data['items']:

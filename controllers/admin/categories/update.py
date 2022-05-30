@@ -11,6 +11,8 @@ def call(id):
     kdict['type'] = 'category'
 
     kdict['item'] = update.call(id)
-    kdict['items'] = read.call(kdict['maxPosts'])
+    result = read.call(kdict['maxPosts'])
+    kdict['items'] = result['categories']
+    kdict['counter'] = result['counter']
 
     return template('base',data=kdict)

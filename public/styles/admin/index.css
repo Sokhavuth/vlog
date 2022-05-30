@@ -73,8 +73,8 @@
 .Index .Listing .info{
     background: var(--background-darker);
     text-align: center;
-    margin: 10px auto;
-    padding: 5px;
+    margin: 10px auto 0;
+    padding: 10px;
 }
 
 .Index .Listing .list .item{
