@@ -27,3 +27,11 @@ def editCategory(id):
         return update.call(id)
     else:
         redirect('/login')
+
+@app.route('/delete/<id>')
+def deleteCategory(id):
+    if checkLogged.call():
+        from controllers.admin.categories import delete
+        return delete.call(id)
+    else:
+        redirect('/login')

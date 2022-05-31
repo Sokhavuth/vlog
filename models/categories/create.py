@@ -23,4 +23,3 @@ def call():
     else:
         category_ref.set(category)
         counter_ref.update({'total': config.firestore.Increment(1)})
-        
